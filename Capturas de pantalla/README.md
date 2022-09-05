@@ -11,3 +11,5 @@ la condicion else siempre se ejecutara por dos cosas:
 1- text1 y text2 tienen un " " por delante, por lo que siempre seran diferentes debido a que expected no contiene un espacio en blanco al principio del string
 
 2- La otra razon es porque el metodo GetPhrase() hace un append de un string que es un espacio en blanco " ", cuando text1 y text2 ya tienen un espacio en blanco al final, por lo tanto quedaría en un doble espacio en blanco. Si observamos la variable "expected", vemos que tiene un solo espacio en blanco por lo que, nunca seran iguales y siempre se ejecutara la condicion else.
+
+3- Una manera de solucionar esto seria utilizando el metodo .Trim(), en la clase Word, a this.text, de esta manera estamos eliminando el espacio que contiene al principio la palabra. Lo mismo deberiamos realizar en la variable phrase del metodo GetPhrase()
